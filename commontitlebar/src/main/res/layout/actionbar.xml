@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/relay_background"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+      <ImageView
+          android:id="@+id/iv_left"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:layout_centerVertical="true"
+          android:padding="16dp"
+          android:background="@drawable/selector_trans_divider"
+          android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="返回"
+            android:background="@drawable/selector_trans_divider"
+            android:padding="16dp"
+            android:visibility="gone"/>
+
+      <TextView
+          android:id="@+id/tv_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="我的标题"
+          android:singleLine="true"
+          android:textSize="14sp"
+          android:visibility="gone"/>
+
+      <ImageView
+          android:id="@+id/iv_right"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:background="@drawable/selector_trans_divider"
+          android:padding="16dp"
+          android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="完成"
+            android:background="@drawable/selector_trans_divider"
+            android:padding="16dp"
+            android:visibility="gone"/>
+
+  </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/relay_background"
+        android:background="#e1e1e1" />
+
+</RelativeLayout>

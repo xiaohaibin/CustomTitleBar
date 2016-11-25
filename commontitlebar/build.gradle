@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+//提交到仓库中的版本号
+version = "1.0.0"
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 23
+
+    }
+}
