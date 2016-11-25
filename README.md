@@ -10,7 +10,7 @@
 
 ## 效果图
 
-![1]()
+![1](https://github.com/xiaohaibin/CustomTitileBar/blob/master/screenshot/gif.gif)
 
 ## 基本使用
 
