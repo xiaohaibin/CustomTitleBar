@@ -24,7 +24,7 @@ dependencies {
 }
 ```
 
-#### 3.在布局文件中添加
+#### 2.在布局文件中添加
 
 ```
     <com.stx.xhb.commontitlebar.CustomTitlebar
@@ -38,7 +38,7 @@ dependencies {
 ```
 
 
-#### 4.在Activity或者Fragment中配置
+#### 3.在Activity或者Fragment中配置
 
 ```
         CustomTitlebar customTitlebar2 = (CustomTitlebar) findViewById(R.id.title2);
