@@ -14,10 +14,10 @@ import android.widget.TextView;
 
 
 /**
- * @link https://xiaohaibin.github.io/
- * @email： xhb_199409@163.com
- * @github: https://github.com/xiaohaibin
- * @description： 封装好的通用标题栏控件
+ * link https://xiaohaibin.github.io/
+ * email： xhb_199409@163.com
+ * github: https://github.com/xiaohaibin
+ * description： 封装好的通用标题栏控件
  */
 public class CustomTitlebar extends RelativeLayout implements OnClickListener {
 
@@ -213,29 +213,17 @@ public class CustomTitlebar extends RelativeLayout implements OnClickListener {
         }
     }
 
-    /**
-     * 设置右侧文字大小
-     *
-     * @param textSize
-     */
+
     public void setTvRightTextSize(int textSize) {
         mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_PX,textSize);
     }
 
-    /**
-     * 设置右侧文字颜色
-     *
-     * @param textColor
-     */
+
     public void setTvRightTextColor(int textColor) {
         mTvRight.setTextColor(textColor);
     }
 
-    /**
-     * 设置左边按钮图片资源
-     *
-     * @param resId
-     */
+
     public void setLeftIcon(int resId) {
         if (resId == 0) {
             mIvLeft.setVisibility(View.GONE);
@@ -245,11 +233,6 @@ public class CustomTitlebar extends RelativeLayout implements OnClickListener {
         }
     }
 
-    /**
-     * 设置右边按钮图片资源
-     *
-     * @param resId
-     */
     public void setRightIcon(int resId) {
         if (resId==0) {
             mIvRight.setVisibility(View.GONE);
@@ -267,40 +250,23 @@ public class CustomTitlebar extends RelativeLayout implements OnClickListener {
         mTitleBarOnClickListener = listener;
     }
 
-    /**
-     * 设置是否显示分割线
-     *
-     * @param visibility
-     */
+
     public void setLineIsVisible(int visibility) {
         line.setVisibility(visibility);
     }
 
-    /**
-     * 设置是否显示右边按钮
-     *
-     * @param show_right_button
-     */
+
     public void setShow_right_button(boolean show_right_button) {
         mTvRight.setVisibility(show_right_button ? VISIBLE : INVISIBLE);
         mIvRight.setVisibility(show_right_button ? VISIBLE : INVISIBLE);
     }
 
-    /**
-     * 设置是否显示左边按钮
-     *
-     * @param show_left_button
-     */
     public void setShow_left_button(boolean show_left_button) {
         mIvLeft.setVisibility(show_left_button ? VISIBLE : INVISIBLE);
         mIvLeft.setVisibility(show_left_button ? VISIBLE : INVISIBLE);
     }
 
-    /**
-     * 设置标题栏背景色
-     *
-     * @param resId
-     */
+
     public void setTitleBarBackground(int resId) {
         mRelativeLayout.setBackgroundColor(resId);
     }
