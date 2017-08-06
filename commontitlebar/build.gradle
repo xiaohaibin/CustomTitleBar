@@ -15,26 +15,6 @@ android {
     }
 }
 
-////添加
-//publish {
-//    userOrg = 'jxnk25'//bintray.com用户名
-//    groupId = 'com.xhb'//jcenter上的路径
-//    artifactId = 'commontitlebar'//项目名称
-//    publishVersion = '1.1.0'//版本号
-//    desc = 'Oh hi, this is a nice commontitlebar for a project, right?'//描述，不重要
-//    website = 'https://github.com/xiaohaibin/CommonTitleBar'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
-//}
-//
-//allprojects {
-//    tasks.withType(Javadoc) {
-//        options{
-//            encoding "UTF-8"
-//            charSet 'UTF-8'
-//            links "http://docs.oracle.com/javase/7/docs/api"
-//        }
-//    }
-//}
-
 ///方法1
 def siteUrl = 'https://github.com/xiaohaibin/CustomTitileBar'      // 项目的主页   这个是说明，可随便填
 def gitUrl = 'https://github.com/xiaohaibin/CustomTitileBar'      // Git仓库的url  这个是说明，可随便填
@@ -47,7 +27,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'Android Commontitlebar'     //项目描述
+                name 'Android CommonTitleBar'     //项目描述
                 url siteUrl
                 // Set your license
                 licenses {
@@ -98,7 +78,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "Commontitlebar"    //发布到JCenter上的项目名字，必须填写
+        name = "CommonTitleBar"    //发布到JCenter上的项目名字，必须填写
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
