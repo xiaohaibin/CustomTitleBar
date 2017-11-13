@@ -75,7 +75,7 @@ dependencies {
 | right_button_text| 右边文字按钮内容 | string |
 | right_button_textColor| 右边文字颜色 | color，默认为Color.GRAY |
 | right_button_textSize| 右边文字大小 | dimension，默认为14sp |
-| show_line| 是否显示顶部分割线 | booleanT类型，默认显示 |
+| show_line| 是否显示顶部分割线 | boolean类型，默认显示 |
 
 ## 关于我
 个人邮箱：xhb_199409@163.com
@@ -87,11 +87,11 @@ dependencies {
 [个人博客](http://blog.csdn.net/jxnk25)
 
 
-##如果觉得文章帮到你，不求打赏，喜欢我的文章可以关注我和朋友一起运营的微信公众号，将会定期推送优质技术文章，求关注~~~##
+## 如果觉得文章帮到你，不求打赏，喜欢我的文章可以关注我和朋友一起运营的微信公众号，将会定期推送优质技术文章，求关注~~~
 
 ![欢迎关注“大话安卓”微信公众号](http://upload-images.jianshu.io/upload_images/1956769-2f49dcb0dc5195b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##欢迎加入“大话安卓”技术交流群，一起分享，共同进步##
+## 欢迎加入“大话安卓”技术交流群，一起分享，共同进步
 ![欢迎加入“大话安卓”技术交流群，互相学习提升](http://upload-images.jianshu.io/upload_images/1956769-326c166b86ed8e94.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 License
