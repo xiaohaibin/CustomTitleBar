@@ -1,5 +1,6 @@
 # CustomTitleBar
-通用Android标题栏控件
+
+通用Android标题栏控件，本控件是基于 [QMUI_Android](https://github.com/QMUI/QMUI_Android) 中的标题栏控件抽取出来，单独封装使用的，在此感谢QMUI团队的开源项目。
 
 
 ## 主要功能：
