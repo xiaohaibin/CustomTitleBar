@@ -27,34 +27,36 @@ dependencies {
 #### 2.在布局文件中添加
 
 ```
-    <com.stx.xhb.commontitlebar.CustomTitlebar
-        android:id="@+id/title3"
+    <com.stx.xhb.commontitlebar.CustomTitleBar
+        android:id="@+id/titlebar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="标题"
-        app:left_button_image="@mipmap/icon_back"
-        app:title_textSize="14sp"
-        app:right_button_image="@mipmap/img_currency_selected"/>
+        android:layout_height="?attr/titlebar_height"/>
 ```
 
 
 #### 3.在Activity或者Fragment中配置
 
 ```
-        CustomTitlebar customTitlebar2 = (CustomTitlebar) findViewById(R.id.title2);
-        customTitlebar2.setAction(new CustomTitlebar.TitleBarOnClickListener() {
+       CustomTitleBar mTopBar = (CustomTitleBar) findViewById(R.id.titlebar);
+        mTopBar.addLeftImageButton(R.mipmap.ic_launcher,R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void performAction(View view) {
-                switch (view.getId()){
-                    case R.id.iv_left:
-                        Toast.makeText(MainActivity.this, "左边图片按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.tv_right:
-                        Toast.makeText(MainActivity.this, "右边文字按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
             }
         });
+        mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
+            }
+        });
+        mTopBar.addRightTextButton("呵呵",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "呵呵", Toast.LENGTH_SHORT).show();
+            }
+        });
+        mTopBar.setTitle("测试");
 
 ```
 
