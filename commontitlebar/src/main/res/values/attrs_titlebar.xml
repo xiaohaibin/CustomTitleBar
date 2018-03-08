@@ -2,7 +2,7 @@
 <resources>
 
     <!--************ CustomTitleBar ***********-->
-    <declare-styleable name="CustomTitleBar2">
+    <declare-styleable name="CustomTitleBar">
         <attr name="titlebar_title_gravity" format="enum">
             <enum name="left_center" value="19"/>
             <enum name="center" value="17"/>

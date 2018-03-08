@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.stx.xhb.commontitlebar.CustomTitleBar2;
+import com.stx.xhb.commontitlebar.CustomTitleBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CustomTitleBar2 mTopBar = (CustomTitleBar2) findViewById(R.id.titlebar);
+        CustomTitleBar mTopBar = (CustomTitleBar) findViewById(R.id.titlebar);
         mTopBar.addLeftImageButton(R.mipmap.ic_launcher,R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

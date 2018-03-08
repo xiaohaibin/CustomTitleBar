@@ -29,7 +29,7 @@ import com.stx.xhb.commontitlebar.widget.UIAlphaImageButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomTitleBar2 extends RelativeLayout {
+public class CustomTitleBar extends RelativeLayout {
 
     private static final int DEFAULT_VIEW_ID = -1;
     private int mLeftLastViewId; // 左侧最右 view 的 id
@@ -69,15 +69,15 @@ public class CustomTitleBar2 extends RelativeLayout {
     private int mTitleBarTextBtnPaddingHorizontal = -1;
     private Rect mTitleContainerRect;
 
-    public CustomTitleBar2(Context context) {
+    public CustomTitleBar(Context context) {
         this(context, null);
     }
 
-    public CustomTitleBar2(Context context, AttributeSet attrs) {
+    public CustomTitleBar(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.CustomTitleBarStyle);
     }
 
-    public CustomTitleBar2(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CustomTitleBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initVar();
         init(context, attrs, defStyleAttr);
@@ -93,12 +93,12 @@ public class CustomTitleBar2 extends RelativeLayout {
 
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-        TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.CustomTitleBar2, defStyleAttr, 0);
+        TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.CustomTitleBar, defStyleAttr, 0);
         if (array != null) {
-            mTitleBarDividerColor = array.getColor(R.styleable.CustomTitleBar2_titlebar_divider_color, ContextCompat.getColor(context, R.color.divider));
-            mTitleBarDividerHeight = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_divider_height, 1);
-            mTitleBarBgColor = array.getColor(R.styleable.CustomTitleBar2_titlebar_bg_color, Color.WHITE);
-            boolean showDivider = array.getBoolean(R.styleable.CustomTitleBar2_titlebar_show_divider, true);
+            mTitleBarDividerColor = array.getColor(R.styleable.CustomTitleBar_titlebar_divider_color, ContextCompat.getColor(context, R.color.divider));
+            mTitleBarDividerHeight = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_divider_height, 1);
+            mTitleBarBgColor = array.getColor(R.styleable.CustomTitleBar_titlebar_bg_color, Color.WHITE);
+            boolean showDivider = array.getBoolean(R.styleable.CustomTitleBar_titlebar_show_divider, true);
             getCommonFieldFormTypedArray(context, array);
             array.recycle();
             setBackgroundDividerEnabled(showDivider);
@@ -115,20 +115,20 @@ public class CustomTitleBar2 extends RelativeLayout {
     }
 
     private void getCommonFieldFormTypedArray(Context context, TypedArray array){
-        mLeftBackDrawableRes = array.getResourceId(R.styleable.CustomTitleBar2_titlebar_left_back_drawable_id, R.id.titlebar_item_left_back);
-        mTitleGravity = array.getInt(R.styleable.CustomTitleBar2_titlebar_title_gravity, Gravity.CENTER);
-        mTitleTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_title_text_size, ScreenHelper.sp2px(context, 17));
-        mTitleTextSizeWithSubTitle = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_title_text_size, ScreenHelper.sp2px(context, 16));
-        mSubTitleTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_subtitle_text_size, ScreenHelper.sp2px(context, 11));
-        mTitleTextColor = array.getColor(R.styleable.CustomTitleBar2_titlebar_title_color, UIResHelper.getAttrColor(context, R.attr.config_color_gray_1));
-        mSubTitleTextColor = array.getColor(R.styleable.CustomTitleBar2_titlebar_subtitle_color, UIResHelper.getAttrColor(context, R.attr.config_color_gray_4));
-        mTitleMarginHorWhenNoBtnAside = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_title_margin_horizontal_when_no_btn_aside, 0);
-        mTitleContainerPaddingHor = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_title_container_padding_horizontal, 0);
-        mTopBarImageBtnWidth = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_image_btn_width, ScreenHelper.dp2px(context, 48));
-        mTopBarImageBtnHeight = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_image_btn_height, ScreenHelper.dp2px(context, 48));
-        mTopBarTextBtnPaddingHor = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_text_btn_padding_horizontal, ScreenHelper.dp2px(context, 12));
-        mTopBarTextBtnTextColor = array.getColorStateList(R.styleable.CustomTitleBar2_titlebar_text_btn_color_state_list);
-        mTopBarTextBtnTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar2_titlebar_text_btn_text_size, ScreenHelper.sp2px(context, 16));
+        mLeftBackDrawableRes = array.getResourceId(R.styleable.CustomTitleBar_titlebar_left_back_drawable_id, R.id.titlebar_item_left_back);
+        mTitleGravity = array.getInt(R.styleable.CustomTitleBar_titlebar_title_gravity, Gravity.CENTER);
+        mTitleTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_title_text_size, ScreenHelper.sp2px(context, 17));
+        mTitleTextSizeWithSubTitle = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_title_text_size, ScreenHelper.sp2px(context, 16));
+        mSubTitleTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_subtitle_text_size, ScreenHelper.sp2px(context, 11));
+        mTitleTextColor = array.getColor(R.styleable.CustomTitleBar_titlebar_title_color, UIResHelper.getAttrColor(context, R.attr.config_color_gray_1));
+        mSubTitleTextColor = array.getColor(R.styleable.CustomTitleBar_titlebar_subtitle_color, UIResHelper.getAttrColor(context, R.attr.config_color_gray_4));
+        mTitleMarginHorWhenNoBtnAside = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_title_margin_horizontal_when_no_btn_aside, 0);
+        mTitleContainerPaddingHor = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_title_container_padding_horizontal, 0);
+        mTopBarImageBtnWidth = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_image_btn_width, ScreenHelper.dp2px(context, 48));
+        mTopBarImageBtnHeight = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_image_btn_height, ScreenHelper.dp2px(context, 48));
+        mTopBarTextBtnPaddingHor = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_text_btn_padding_horizontal, ScreenHelper.dp2px(context, 12));
+        mTopBarTextBtnTextColor = array.getColorStateList(R.styleable.CustomTitleBar_titlebar_text_btn_color_state_list);
+        mTopBarTextBtnTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_text_btn_text_size, ScreenHelper.sp2px(context, 16));
     }
 
     /**
