@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--********************* TopBar *********************-->
+    <style name="CustomTitleBar.TopBar">
+        <item name="titlebar_divider_color">?attr/config_color_divider</item>
+        <item name="titlebar_divider_height">1px</item>
+        <item name="titlebar_bg_color">@color/config_color_white</item>
+        <item name="titlebar_title_color">?attr/config_color_gray_1</item>
+        <item name="titlebar_title_text_size">17sp</item>
+        <item name="titlebar_show_divider">true</item>
+        <item name="titlebar_left_back_drawable_id">@drawable/icon_titlebar_back</item>
+        <item name="titlebar_title_gravity">center</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="titlebar_title_text_size_with_subtitle">16sp</item>
+        <item name="titlebar_title_margin_horizontal_when_no_btn_aside">0dp</item>
+        <item name="titlebar_title_container_padding_horizontal">8dp</item>
+        <item name="titlebar_subtitle_text_size">11sp</item>
+        <item name="titlebar_subtitle_color">@color/config_color_gray_1</item>
+        <item name="titlebar_image_btn_width">48dp</item>
+        <item name="titlebar_image_btn_height">48dp</item>
+        <item name="titlebar_text_btn_padding_horizontal">12dp</item>
+        <item name="titlebar_text_btn_color_state_list">@color/titlebar_text_color</item>
+        <item name="titlebar_text_btn_text_size">16sp</item>
+    </style>
+</resources>

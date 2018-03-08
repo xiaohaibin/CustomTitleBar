@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.stx.xhb.commontitlebar.CustomTitlebar;
+import com.stx.xhb.commontitlebar.CustomTitleBar2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,58 +13,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CustomTitlebar customTitlebar1 = (CustomTitlebar) findViewById(R.id.title1);
-        CustomTitlebar customTitlebar2 = (CustomTitlebar) findViewById(R.id.title2);
-        CustomTitlebar customTitlebar3 = (CustomTitlebar) findViewById(R.id.title3);
-        CustomTitlebar customTitlebar4 = (CustomTitlebar) findViewById(R.id.title4);
-        customTitlebar1.setAction(new CustomTitlebar.TitleBarOnClickListener() {
+        CustomTitleBar2 mTopBar = (CustomTitleBar2) findViewById(R.id.titlebar);
+        mTopBar.addLeftImageButton(R.mipmap.ic_launcher,R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void performAction(View view) {
-                switch (view.getId()){
-                    case R.id.iv_left:
-                        Toast.makeText(MainActivity.this, "左边图片按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
             }
         });
-        customTitlebar2.setAction(new CustomTitlebar.TitleBarOnClickListener() {
+        mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
-            public void performAction(View view) {
-                switch (view.getId()){
-                    case R.id.iv_left:
-                        Toast.makeText(MainActivity.this, "左边图片按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.tv_right:
-                        Toast.makeText(MainActivity.this, "右边文字按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
             }
         });
-        customTitlebar3.setAction(new CustomTitlebar.TitleBarOnClickListener() {
+        mTopBar.addRightTextButton("呵呵",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void performAction(View view) {
-                switch (view.getId()){
-                    case R.id.iv_left:
-                        Toast.makeText(MainActivity.this, "左边图片按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.iv_right:
-                        Toast.makeText(MainActivity.this, "右边图片按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "呵呵", Toast.LENGTH_SHORT).show();
             }
         });
-        customTitlebar4.setAction(new CustomTitlebar.TitleBarOnClickListener() {
-            @Override
-            public void performAction(View view) {
-                switch (view.getId()){
-                    case R.id.tv_left:
-                        Toast.makeText(MainActivity.this, "左边文字按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.tv_right:
-                        Toast.makeText(MainActivity.this, "右边文字按钮", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            }
-        });
+        mTopBar.setTitle("测试");
+
     }
 }

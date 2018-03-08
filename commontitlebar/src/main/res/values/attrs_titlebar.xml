@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CustomTitlebar">
-        <attr name="title_background" format="color"/>
-        <attr name="left_button_image" format="reference"/>
-        <attr name="left_button_text" format="string"/>
-        <attr name="left_button_textColor" format="color"/>
-        <attr name="left_button_textSize" format="dimension"/>
-        <attr name="title_text" format="string"/>
-        <attr name="title_textColor" format="color"/>
-        <attr name="title_textSize" format="dimension"/>
-        <attr name="right_button_image" format="reference"/>
-        <attr name="right_button_text" format="string"/>
-        <attr name="right_button_textColor" format="color"/>
-        <attr name="right_button_textSize" format="dimension"/>
-        <attr name="show_line" format="boolean"/>
+
+    <!--************ CustomTitleBar ***********-->
+    <declare-styleable name="CustomTitleBar2">
+        <attr name="titlebar_title_gravity" format="enum">
+            <enum name="left_center" value="19"/>
+            <enum name="center" value="17"/>
+        </attr>
+        <attr name="titlebar_show_divider" format="boolean"/>
+        <attr name="titlebar_divider_color" format="color"/>
+        <attr name="titlebar_divider_height" format="dimension"/>
+        <attr name="titlebar_bg_color" format="color"/>
+        <attr name="titlebar_left_back_drawable_id" format="reference"/>
+        <attr name="titlebar_title_text_size" format="dimension"/>
+        <attr name="titlebar_title_text_size_with_subtitle" format="dimension"/>
+        <attr name="titlebar_subtitle_text_size" format="dimension"/>
+        <attr name="titlebar_title_color" format="color"/>
+        <attr name="titlebar_subtitle_color" format="color"/>
+        <attr name="titlebar_title_margin_horizontal_when_no_btn_aside" format="dimension"/>
+        <attr name="titlebar_title_container_padding_horizontal" format="dimension"/>
+        <attr name="titlebar_image_btn_width" format="dimension"/>
+        <attr name="titlebar_image_btn_height" format="dimension"/>
+        <attr name="titlebar_text_btn_padding_horizontal" format="dimension"/>
+        <attr name="titlebar_text_btn_color_state_list" format="reference"/>
+        <attr name="titlebar_text_btn_text_size" format="dimension"/>
     </declare-styleable>
+    <attr name="CustomTitleBarStyle" format="reference"/>
+
 </resources>

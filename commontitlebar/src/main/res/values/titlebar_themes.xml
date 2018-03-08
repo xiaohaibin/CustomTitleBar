@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppRootTheme" parent="android:Theme.Holo.Light"/>
+
+    <style name="AppBaseTheme" parent="AppRootTheme">
+        <item name="android:imageButtonStyle">@style/ImageButton</item>
+        <item name="android:buttonStyle">@style/Button</item>
+        <item name="android:textViewStyle">@style/TextView</item>
+    </style>
+
+    <style name="AppConfigTheme" parent="AppBaseTheme"/>
+
+
+    <style name="CustomTitleBar" parent="AppConfigTheme">
+
+        <!--**********************************************
+         *                common color               *
+         **********************************************-->
+        <item name="config_color_divider">@color/divider</item>
+        <item name="config_color_divider_darken">@color/config_color_divider_darken</item>
+        <item name="config_color_background">@color/config_color_background</item>
+        <item name="config_color_background_pressed">@color/config_color_background_pressed</item>
+        <item name="config_color_pressed">@color/config_color_pressed</item>
+        <item name="config_color_blue">@color/config_color_blue</item>
+        <item name="config_color_red">@color/config_color_red</item>
+        <item name="alpha_pressed">0.5</item>
+        <item name="alpha_disabled">0.5</item>
+
+             <!--**********************************************
+               *                TitleBar              *
+               **********************************************-->
+        <item name="titlebar_height">56dp</item>
+        <!--<item name="titlebar_title_color">@color/config_color_gray_1</item>-->
+        <!--<item name="titlebar_title_text_size">17sp</item>-->
+        <!--<item name="titlebar_title_text_size_with_subtitle">16sp</item>-->
+        <!--<item name="titlebar_title_margin_horizontal_when_no_btn_aside">0dp</item>-->
+        <!--<item name="titlebar_title_container_padding_horizontal">8dp</item>-->
+        <!--<item name="titlebar_subtitle_text_size">11sp</item>-->
+        <!--<item name="titlebar_subtitle_color">@color/config_color_gray_1</item>-->
+        <!--<item name="titlebar_image_btn_width">48dp</item>-->
+        <!--<item name="titlebar_image_btn_height">48dp</item>-->
+        <!--<item name="titlebar_text_btn_padding_horizontal">12dp</item>-->
+        <!--<item name="titlebar_text_btn_color_state_list">@color/titlebar_text_color</item>-->
+        <!--<item name="titlebar_text_btn_text_size">16sp</item>-->
+        <!--<item name="CustomTitleBarStyle">@style/CustomTitleBar.TopBar</item>-->
+
+    </style>
+
+
+    <style name="ImageButtonBase" parent="android:Widget.Holo.Light.ImageButton"/>
+
+    <style name="TextAppearanceBase" parent="android:TextAppearance.Holo"/>
+
+    <style name="ButtonBase" parent="android:Widget.Holo.Light.Button"/>
+
+    <style name="ImageButton" parent="ImageButtonBase">
+        <item name="android:background">@color/config_color_transparent</item>
+    </style>
+
+    <style name="Button" parent="ButtonBase"/>
+
+
+    <style name="TextView" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/UITextAppearance</item>
+        <!-- textColorHighlight 放在appearance中无效，好像TextView总是默认存在一个textColorHighlight
+             会覆盖掉它，并不知道原因 -->
+        <item name="android:textColorHighlight">?attr/config_color_background_pressed</item>
+    </style>
+
+
+    <style name="UITextAppearance" parent="TextAppearanceBase">
+        <item name="android:textColor">?attr/config_color_black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHighlight">?attr/config_color_background_pressed</item>
+    </style>
+
+    <style name="CustomTitleBar.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+</resources>

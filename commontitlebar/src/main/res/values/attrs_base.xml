@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="alpha_pressed" format="float"/>
+    <attr name="alpha_disabled" format="float"/>
+    <attr name="config_color_background" format="color"/>
+    <attr name="config_color_background_pressed" format="color"/>
+    <attr name="config_color_pressed" format="color"/>
+    <attr name="config_color_black" format="color"/>
+    <attr name="config_color_blue" format="color"/>
+    <attr name="config_color_red" format="color"/>
+    <attr name="config_color_divider" format="color"/>
+    <attr name="config_color_divider_darken" format="color"/>
+    <attr name="config_color_gray_1" format="color"/>
+    <attr name="config_color_gray_4" format="color"/>
+    <attr name="titlebar_height" format="dimension"/>
+</resources>

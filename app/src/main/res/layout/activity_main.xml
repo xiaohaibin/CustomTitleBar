@@ -4,44 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.stx.xhb.customtitilebardemo.MainActivity">
 
-    <com.stx.xhb.commontitlebar.CustomTitlebar
-        android:id="@+id/title1"
+    <com.stx.xhb.commontitlebar.CustomTitleBar2
+        android:id="@+id/titlebar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="标题"
-        app:left_button_image="@mipmap/icon_back"
-        app:title_textSize="14sp"/>
+        android:layout_height="?attr/titlebar_height"/>
 
-    <com.stx.xhb.commontitlebar.CustomTitlebar
-        android:id="@+id/title2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="标题"
-        app:left_button_image="@mipmap/icon_back"
-        app:title_textSize="14sp"
-        app:title_textColor="#0e93ec"
-        app:right_button_text="完成"/>
-
-    <com.stx.xhb.commontitlebar.CustomTitlebar
-        android:id="@+id/title3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="标题"
-        app:left_button_image="@mipmap/icon_back"
-        app:title_textSize="14sp"
-        app:right_button_image="@mipmap/img_currency_selected"/>
-
-    <com.stx.xhb.commontitlebar.CustomTitlebar
-        android:id="@+id/title4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="标题"
-        app:left_button_text="返回"
-        app:title_textSize="14sp"
-        app:right_button_text="完成"
-        app:right_button_textColor="#f14010"/>
 </LinearLayout>
