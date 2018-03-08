@@ -101,7 +101,7 @@ dependencies {
 
 | 属性名 | 属性说明 | 属性值 | 
 | ------------ | ------------- | ------------ |
-| titlebar_title_gravity| 标题栏背景色 | color，默认为white |
+| titlebar_title_gravity| 标题gravity，用于控制 title 和 subtitle 的对齐方式 | 默认为Gravity.CENTER |
 | titlebar_show_divider| 是否显示分割线 | boolean 类型 ，默认显示|
 | titlebar_divider_color| 分割线颜色 |color |
 | titlebar_divider_height| 分割线高度 | dimension 类型，默认为1px |
