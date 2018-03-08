@@ -12,7 +12,7 @@
 
 ![1](https://github.com/xiaohaibin/CustomTitileBar/blob/master/screenshot/gif.gif)
 
-## 基本使用
+## 基本使用（详细的使用方法可以参考demo）
 
  [ ![Download](https://api.bintray.com/packages/jxnk25/maven/CommonTitleBar/images/download.svg) ](https://bintray.com/jxnk25/maven/CommonTitleBar/_latestVersion)
 
