@@ -1,18 +1,19 @@
 # CustomTitleBar
-通用Android标题栏控件
+
+通用Android标题栏控件，本控件是基于 [QMUI_Android](https://github.com/QMUI/QMUI_Android) 中的标题栏控件抽取出来，单独封装使用的，在此感谢QMUI团队的开源项目。
 
 
 ## 主要功能：
-- 支持左、右按钮
-- 支持按钮点击背景
+- 支持左、右 文字、图片按钮
+- 支持主、副标题
 - 支持自定义左右按钮图片、文字样式及标题文字样式
-
+- 支持全局设置标题主题样式
 
 ## 效果图
 
 ![1](https://github.com/xiaohaibin/CustomTitileBar/blob/master/screenshot/gif.gif)
 
-## 基本使用
+## 基本使用（详细的使用方法可以参考demo）
 
  [ ![Download](https://api.bintray.com/packages/jxnk25/maven/CommonTitleBar/images/download.svg) ](https://bintray.com/jxnk25/maven/CommonTitleBar/_latestVersion)
 
@@ -33,29 +34,64 @@ dependencies {
         android:layout_height="?attr/titlebar_height"/>
 ```
 
+#### 3.在styles文件中配置主题
 
-#### 3.在Activity或者Fragment中配置
+```
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="config_color_divider">@color/divider</item>
+        <!--标题栏主题样式-->
+        <item name="CustomTitleBarStyle">@style/QDTopBar</item>
+        <!--设置标题栏高度-->
+        <item name="titlebar_height">56dp</item>
+    </style>
+
+    <style name="QDTopBar" parent="CustomTitleBar.TopBar">
+        <item name="titlebar_bg_color">@color/colorAccent</item>
+        <item name="titlebar_title_text_size">16sp</item>
+        <item name="titlebar_title_color">@color/color_white</item>
+        <item name="titlebar_subtitle_color">@color/config_color_white</item>
+        <item name="titlebar_text_btn_color_state_list">@color/s_topbar_btn_color</item>
+        <item name="titlebar_image_btn_height">48dp</item>
+    </style>
+
+</resources>
+
+```
+
+#### 4.在Activity或者Fragment中配置
 
 ```
        CustomTitleBar mTopBar = (CustomTitleBar) findViewById(R.id.titlebar);
+       
         mTopBar.addLeftImageButton(R.mipmap.ic_launcher,R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
             }
         });
+        
         mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
             }
         });
+        
         mTopBar.addRightTextButton("呵呵",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "呵呵", Toast.LENGTH_SHORT).show();
             }
         });
+        
         mTopBar.setTitle("测试");
 
 ```
@@ -65,19 +101,24 @@ dependencies {
 
 | 属性名 | 属性说明 | 属性值 | 
 | ------------ | ------------- | ------------ |
-| title_background| 标题栏背景色 | color，默认为white |
-| left_button_image| 左边图片按钮背景 | reference ，不设置则不显示|
-| left_button_text| 左边文字按钮内容 |string |
-| left_button_textColor| 左边文字按钮文字颜色 | color，默认为Color.GRAY |
-| left_button_textSize| 左边文字按钮文字大小 | dimension，默认为14sp |
-| title_text| 标题文字内容 | string |
-| title_textColor| 标题文字颜色 |color，默认为Color.GRAY |
-| title_textSize| 标题文字大小| dimension，默认为14sp |
-| right_button_image| 右边图片按钮背景 |reference  ，不设置则不显示|
-| right_button_text| 右边文字按钮内容 | string |
-| right_button_textColor| 右边文字颜色 | color，默认为Color.GRAY |
-| right_button_textSize| 右边文字大小 | dimension，默认为14sp |
-| show_line| 是否显示顶部分割线 | boolean类型，默认显示 |
+| titlebar_title_gravity| 标题gravity，用于控制 title 和 subtitle 的对齐方式 | 默认为Gravity.CENTER |
+| titlebar_show_divider| 是否显示分割线 | boolean 类型 ，默认显示|
+| titlebar_divider_color| 分割线颜色 |color |
+| titlebar_divider_height| 分割线高度 | dimension 类型，默认为1px |
+| titlebar_bg_color| 标题栏背景颜色 | color 类型，默认为 Color.WHITE |
+| titlebar_left_back_drawable_id| 左侧返回按钮图片资源id | reference |
+| titlebar_title_text_size| 标题文字大小 |dimension 类型，默认为17sp |
+| titlebar_title_text_size_with_subtitle| 有副标题下的标题文字大小| dimension 类型，默认为16sp |
+| titlebar_subtitle_text_size| 副标题文字大小 |dimension 类型，默认为11sp|
+| titlebar_title_color| 标题文字颜色 | color |
+| titlebar_subtitle_color| 副标题文字颜色 | color |
+| titlebar_title_margin_horizontal_when_no_btn_aside| 左右没有按钮时，title 距离 TopBar 左右边缘的距离 | dimension，默认为0dp |
+| titlebar_title_container_padding_horizontal|  包裹 title 和 subTitle 的容器横向内边距 | dimension 类型，默认0dp |
+| titlebar_image_btn_width| 图片按钮宽度 | dimension，默认48dp |
+| titlebar_image_btn_height| 图片按钮高度 | dimension，默认48dp |
+| titlebar_text_btn_padding_horizontal| 文本按钮横向内边距 | dimension 类型，默认12dp |
+| titlebar_text_btn_color_state_list| 文字按钮点击状态 | reference 类型 |
+| titlebar_text_btn_text_size| 按钮文字大小 | dimension 类型，默认16sp |
 
 ## 关于我
 
