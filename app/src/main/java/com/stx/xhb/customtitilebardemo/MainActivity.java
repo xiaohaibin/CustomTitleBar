@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
             }
         });
-        mTopBar.setTitle("我是标题");
+        mTopBar.setTitle("标题");
 
 
         CustomTitleBar titleBar2= (CustomTitleBar) findViewById(R.id.titlebar2);
-        titleBar2.setTitle("我是标题");
+        titleBar2.setTitle("标题");
         titleBar2.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary));
         titleBar2.addLeftTextButton("返回",R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
