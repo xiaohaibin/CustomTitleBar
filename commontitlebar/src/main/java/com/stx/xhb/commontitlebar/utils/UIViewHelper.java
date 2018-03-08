@@ -18,14 +18,6 @@ import android.view.Window;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * @author jxnk25
- * @time 2017/11/29/029
- * @mail:xhb_199409@163.com
- * @github:https://github.com/xiaohaibin
- * @descibe:
- */
-
 public class UIViewHelper {
 
     // copy from View.generateViewId for API <= 16
@@ -48,6 +40,8 @@ public class UIViewHelper {
 
     /**
      * 获取activity的根view
+     * @param activity activity
+     * @return 根view
      */
     public static View getActivityRoot(Activity activity) {
         return ((ViewGroup) activity.findViewById(Window.ID_ANDROID_CONTENT)).getChildAt(0);
@@ -56,6 +50,7 @@ public class UIViewHelper {
 
     /**
      * 触发window的insets的广播，使得view的fitSystemWindows得以生效
+     * @param window window
      */
     @SuppressWarnings("deprecation")
     public static void requestApplyInsets(Window window) {
@@ -122,6 +117,7 @@ public class UIViewHelper {
      * Retrieve the transformed bounding rect of an arbitrary descendant view.
      * This does not need to be a direct child.
      *
+     * @param parent  parentView
      * @param descendant descendant view to reference
      * @param out        rect to set to the bounds of the descendant view
      */

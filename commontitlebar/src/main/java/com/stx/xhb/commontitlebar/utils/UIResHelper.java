@@ -7,14 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 
-/**
- * @author jxnk25
- * @time 2017/11/29/029
- * @mail:xhb_199409@163.com
- * @github:https://github.com/xiaohaibin
- * @descibe:
- */
-
 public class UIResHelper {
 
 

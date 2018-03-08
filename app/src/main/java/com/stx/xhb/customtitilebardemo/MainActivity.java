@@ -1,6 +1,7 @@
 package com.stx.xhb.customtitilebardemo;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -14,25 +15,58 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CustomTitleBar mTopBar = (CustomTitleBar) findViewById(R.id.titlebar);
-        mTopBar.addLeftImageButton(R.mipmap.ic_launcher,R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
+        mTopBar.addRightImageButton(R.mipmap.ic_launcher,R.id.topbar_right_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "右侧图片按钮", Toast.LENGTH_SHORT).show();
             }
         });
         mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "测试", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
-        mTopBar.addRightTextButton("呵呵",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+        mTopBar.addRightTextButton("完成",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "呵呵", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
             }
         });
-        mTopBar.setTitle("测试");
+        mTopBar.setTitle("我是标题");
 
+
+        CustomTitleBar titleBar2= (CustomTitleBar) findViewById(R.id.titlebar2);
+        titleBar2.setTitle("我是标题");
+        titleBar2.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary));
+        titleBar2.addLeftTextButton("返回",R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
+            }
+        });
+        titleBar2.addRightTextButton("完成",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        CustomTitleBar titleBar3= (CustomTitleBar) findViewById(R.id.titlebar3);
+        titleBar3.setTitle("标题");
+        titleBar3.setSubTitle("副标题");
+        titleBar3.addLeftTextButton("返回",R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
+            }
+        });
+        titleBar3.addRightTextButton("完成",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

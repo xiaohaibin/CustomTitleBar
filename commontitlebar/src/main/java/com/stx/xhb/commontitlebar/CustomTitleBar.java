@@ -186,7 +186,7 @@ public class CustomTitleBar extends RelativeLayout {
      * @param title TopBar 的标题
      */
     public TextView setTitle(String title) {
-        TextView titleView = getTitleView(false);
+        TextView titleView = getTitleView();
         titleView.setText(title);
         if (StringHelper.isNullOrEmpty(title)) {
             titleView.setVisibility(GONE);
@@ -203,25 +203,13 @@ public class CustomTitleBar extends RelativeLayout {
         return mTitleView.getText();
     }
 
-    public TextView setEmojiTitle(String title) {
-        TextView titleView = getTitleView(true);
-        titleView.setText(title);
-        if (StringHelper.isNullOrEmpty(title)) {
-            titleView.setVisibility(GONE);
-        } else {
-            titleView.setVisibility(VISIBLE);
-        }
-        return titleView;
-    }
-
-
     public void showTitleView(boolean toShow) {
         if (mTitleView != null) {
             mTitleView.setVisibility(toShow ? VISIBLE : GONE);
         }
     }
 
-    private TextView getTitleView(boolean isEmoji) {
+    private TextView getTitleView() {
         if (mTitleView == null) {
             mTitleView = new TextView(getContext());
             mTitleView.setGravity(Gravity.CENTER);

@@ -2,4 +2,5 @@
 <resources>
     <item name="topbar_right_about_button" type="id"/>
     <item name="topbar_left_button" type="id"/>
+    <item name="topbar_right_button" type="id"/>
 </resources>
