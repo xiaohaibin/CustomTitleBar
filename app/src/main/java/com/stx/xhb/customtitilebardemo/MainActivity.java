@@ -68,5 +68,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
             }
         });
+
+        CustomTitleBar titleBar4= (CustomTitleBar) findViewById(R.id.titlebar4);
+        titleBar4.setTitle("标题");
+        titleBar4.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
+            }
+        });
+        titleBar4.addLeftTextButton("返回",R.id.topbar_left_button);
     }
 }

@@ -22,4 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/titlebar_height"/>
 
+    <com.stx.xhb.commontitlebar.CustomTitleBar
+        android:id="@+id/titlebar4"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/titlebar_height"/>
+
 </LinearLayout>
