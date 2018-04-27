@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -114,7 +115,7 @@ public class CustomTitleBar extends RelativeLayout {
         }
     }
 
-    private void getCommonFieldFormTypedArray(Context context, TypedArray array){
+    private void getCommonFieldFormTypedArray(Context context, TypedArray array) {
         mLeftBackDrawableRes = array.getResourceId(R.styleable.CustomTitleBar_titlebar_left_back_drawable_id, R.id.titlebar_item_left_back);
         mTitleGravity = array.getInt(R.styleable.CustomTitleBar_titlebar_title_gravity, Gravity.CENTER);
         mTitleTextSize = array.getDimensionPixelSize(R.styleable.CustomTitleBar_titlebar_title_text_size, ScreenHelper.sp2px(context, 17));
@@ -145,7 +146,6 @@ public class CustomTitleBar extends RelativeLayout {
             UIViewHelper.setBackgroundColorKeepPadding(this, mTitleBarBgColor);
         }
     }
-
 
 
     /**
@@ -480,6 +480,31 @@ public class CustomTitleBar extends RelativeLayout {
         return addLeftTextButton(getResources().getString(stringResId), viewId);
     }
 
+    /**
+     * 在 TopBar 左边添加一个 Button，并设置文字
+     *
+     * @param stringResId 按钮的文字的 resourceId
+     * @param viewId      该按钮的id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
+     * @return 返回生成的按钮
+     */
+    public Button addLeftTextButton(int stringResId, int viewId, @ColorRes int textColor, float textSize) {
+        return addLeftTextButton(getResources().getString(stringResId), viewId, textColor, textSize);
+    }
+
+
+    /**
+     * 在 TopBar 左边添加一个 Button，并设置文字
+     *
+     * @param buttonText 按钮的文字
+     * @param viewId     该按钮的 id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
+     * @return 返回生成的按钮
+     */
+    public Button addLeftTextButton(String buttonText, int viewId, @ColorRes int textColor, float textSize) {
+        Button button = generateTopBarTextButton(buttonText, textColor, textSize);
+        this.addLeftView(button, viewId, generateTopBarTextButtonLayoutParams());
+        return button;
+    }
+
 
     /**
      * 在 TopBar 左边添加一个 Button，并设置文字
@@ -503,6 +528,30 @@ public class CustomTitleBar extends RelativeLayout {
      */
     public Button addRightTextButton(int stringResId, int viewId) {
         return addRightTextButton(getResources().getString(stringResId), viewId);
+    }
+
+    /**
+     * 在 TopBar 右边添加一个 Button，并设置文字
+     *
+     * @param stringResId 按钮的文字的 resourceId
+     * @param viewId      该按钮的id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
+     * @return 返回生成的按钮
+     */
+    public Button addRightTextButton(int stringResId, int viewId, @ColorRes int textColor, float textSize) {
+        return addRightTextButton(getResources().getString(stringResId), viewId, textColor, textSize);
+    }
+
+    /**
+     * 在 TopBar 右边添加一个 Button，并设置文字
+     *
+     * @param buttonText 按钮的文字
+     * @param viewId     该按钮的 id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
+     * @return 返回生成的按钮
+     */
+    public Button addRightTextButton(String buttonText, int viewId, @ColorRes int textColor, float textSize) {
+        Button button = generateTopBarTextButton(buttonText, textColor, textSize);
+        this.addRightView(button, viewId, generateTopBarTextButtonLayoutParams());
+        return button;
     }
 
     /**
@@ -542,6 +591,28 @@ public class CustomTitleBar extends RelativeLayout {
     }
 
     /**
+     * 生成一个文本按钮，并设置文字
+     *
+     * @param text 按钮的文字
+     * @return 返回生成的按钮
+     */
+    private Button generateTopBarTextButton(String text, @ColorRes int textColor, float textSize) {
+        Button button = new Button(getContext());
+        button.setBackgroundResource(0);
+        button.setMinWidth(0);
+        button.setMinHeight(0);
+        button.setMinimumWidth(0);
+        button.setMinimumHeight(0);
+        int paddingHorizontal = getTopBarTextBtnPaddingHorizontal();
+        button.setPadding(paddingHorizontal, 0, paddingHorizontal, 0);
+        button.setTextColor(textColor);
+        button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+        button.setGravity(Gravity.CENTER);
+        button.setText(text);
+        return button;
+    }
+
+    /**
      * 生成一个图片按钮，配合 {{@link #generateTopBarImageButtonLayoutParams()} 使用
      *
      * @param imageResourceId 图片的 resId
@@ -552,7 +623,6 @@ public class CustomTitleBar extends RelativeLayout {
         backButton.setImageResource(imageResourceId);
         return backButton;
     }
-
 
 
     /**
@@ -616,7 +686,7 @@ public class CustomTitleBar extends RelativeLayout {
 
     protected int getTopBarImageBtnWidth() {
         if (mTitleBarImageBtnWidth == -1) {
-            mTitleBarImageBtnWidth =mTopBarImageBtnWidth;
+            mTitleBarImageBtnWidth = mTopBarImageBtnWidth;
         }
         return mTitleBarImageBtnWidth;
     }
