@@ -92,7 +92,13 @@ dependencies {
             }
         });
         
-        mTopBar.setTitle("测试");
+         //代码中设置样式
+    titleBar2.addRightTextButton("完成",R.id.topbar_right_about_button,ContextCompat.getColorStateList(this,R.color.color_black),16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 ```
 
