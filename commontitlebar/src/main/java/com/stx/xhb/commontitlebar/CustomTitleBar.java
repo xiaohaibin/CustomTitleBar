@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
+import android.support.annotation.DimenRes;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -487,7 +488,7 @@ public class CustomTitleBar extends RelativeLayout {
      * @param viewId      该按钮的id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
      * @return 返回生成的按钮
      */
-    public Button addLeftTextButton(int stringResId, int viewId, @ColorRes int textColor, float textSize) {
+    public Button addLeftTextButton(int stringResId, int viewId, ColorStateList textColor, int textSize) {
         return addLeftTextButton(getResources().getString(stringResId), viewId, textColor, textSize);
     }
 
@@ -499,7 +500,7 @@ public class CustomTitleBar extends RelativeLayout {
      * @param viewId     该按钮的 id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
      * @return 返回生成的按钮
      */
-    public Button addLeftTextButton(String buttonText, int viewId, @ColorRes int textColor, float textSize) {
+    public Button addLeftTextButton(String buttonText, int viewId, ColorStateList textColor, int textSize) {
         Button button = generateTopBarTextButton(buttonText, textColor, textSize);
         this.addLeftView(button, viewId, generateTopBarTextButtonLayoutParams());
         return button;
@@ -537,7 +538,7 @@ public class CustomTitleBar extends RelativeLayout {
      * @param viewId      该按钮的id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
      * @return 返回生成的按钮
      */
-    public Button addRightTextButton(int stringResId, int viewId, @ColorRes int textColor, float textSize) {
+    public Button addRightTextButton(int stringResId, int viewId, ColorStateList textColor, int textSize) {
         return addRightTextButton(getResources().getString(stringResId), viewId, textColor, textSize);
     }
 
@@ -548,7 +549,7 @@ public class CustomTitleBar extends RelativeLayout {
      * @param viewId     该按钮的 id，可在 ids.xml 中找到合适的或新增。手工指定 viewId 是为了适应自动化测试。
      * @return 返回生成的按钮
      */
-    public Button addRightTextButton(String buttonText, int viewId, @ColorRes int textColor, float textSize) {
+    public Button addRightTextButton(String buttonText, int viewId, ColorStateList textColor, int textSize) {
         Button button = generateTopBarTextButton(buttonText, textColor, textSize);
         this.addRightView(button, viewId, generateTopBarTextButtonLayoutParams());
         return button;
@@ -596,7 +597,7 @@ public class CustomTitleBar extends RelativeLayout {
      * @param text 按钮的文字
      * @return 返回生成的按钮
      */
-    private Button generateTopBarTextButton(String text, @ColorRes int textColor, float textSize) {
+    private Button generateTopBarTextButton(String text, ColorStateList textColor, int textSize) {
         Button button = new Button(getContext());
         button.setBackgroundResource(0);
         button.setMinWidth(0);
@@ -606,7 +607,7 @@ public class CustomTitleBar extends RelativeLayout {
         int paddingHorizontal = getTopBarTextBtnPaddingHorizontal();
         button.setPadding(paddingHorizontal, 0, paddingHorizontal, 0);
         button.setTextColor(textColor);
-        button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+        button.setTextSize(TypedValue.COMPLEX_UNIT_PX, ScreenHelper.sp2px(getContext(), textSize));
         button.setGravity(Gravity.CENTER);
         button.setText(text);
         return button;

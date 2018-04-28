@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
-        titleBar2.addRightTextButton("完成",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+        titleBar2.addRightTextButton("完成",R.id.topbar_right_about_button,ContextCompat.getColorStateList(this,R.color.color_black),16).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
