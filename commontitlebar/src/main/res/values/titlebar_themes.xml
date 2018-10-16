@@ -27,23 +27,10 @@
         <item name="alpha_pressed">0.5</item>
         <item name="alpha_disabled">0.5</item>
 
-             <!--**********************************************
-               *                TitleBar              *
-               **********************************************-->
+        <!--**********************************************
+          *                TitleBar              *
+          **********************************************-->
         <item name="titlebar_height">56dp</item>
-        <!--<item name="titlebar_title_color">@color/config_color_gray_1</item>-->
-        <!--<item name="titlebar_title_text_size">17sp</item>-->
-        <!--<item name="titlebar_title_text_size_with_subtitle">16sp</item>-->
-        <!--<item name="titlebar_title_margin_horizontal_when_no_btn_aside">0dp</item>-->
-        <!--<item name="titlebar_title_container_padding_horizontal">8dp</item>-->
-        <!--<item name="titlebar_subtitle_text_size">11sp</item>-->
-        <!--<item name="titlebar_subtitle_color">@color/config_color_gray_1</item>-->
-        <!--<item name="titlebar_image_btn_width">48dp</item>-->
-        <!--<item name="titlebar_image_btn_height">48dp</item>-->
-        <!--<item name="titlebar_text_btn_padding_horizontal">12dp</item>-->
-        <!--<item name="titlebar_text_btn_color_state_list">@color/titlebar_text_color</item>-->
-        <!--<item name="titlebar_text_btn_text_size">16sp</item>-->
-        <!--<item name="CustomTitleBarStyle">@style/CustomTitleBar.TopBar</item>-->
 
     </style>
 

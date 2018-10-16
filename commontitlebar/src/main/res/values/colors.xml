@@ -22,4 +22,10 @@
     <color name="config_color_white">#ffffff</color>
     <color name="config_color_50_blue">#801B88EE</color>
     <color name="config_color_red">#FA3A3A</color>
+    <color name="config_color_75_white">#C0FFFFFF</color>
+    <color name="config_color_50_white">#80FFFFFF</color>
+    <color name="config_color_25_white">#40FFFFFF</color>
+    <color name="config_color_15_white">#26FFFFFF</color>
+    <color name="config_color_10_white">#19FFFFFF</color>
+
 </resources>

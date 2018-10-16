@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppConfigTheme.Compat" parent="AppBaseTheme.Compat" >
+    <style name="AppConfigTheme.Compat" parent="AppBaseTheme.Compat">
         <item name="android:colorPrimary">?attr/config_color_blue</item>
         <item name="android:colorPrimaryDark">?attr/config_color_blue</item>
         <item name="android:colorAccent">?attr/config_color_blue</item>

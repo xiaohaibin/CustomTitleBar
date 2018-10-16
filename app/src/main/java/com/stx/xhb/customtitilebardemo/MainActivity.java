@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CustomTitleBar mTopBar = (CustomTitleBar) findViewById(R.id.titlebar);
-        mTopBar.addRightImageButton(R.mipmap.ic_launcher,R.id.topbar_right_button).setOnClickListener(new View.OnClickListener() {
+        mTopBar.addRightImageButton(R.mipmap.ic_launcher, R.id.topbar_right_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "右侧图片按钮", Toast.LENGTH_SHORT).show();
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
-        mTopBar.addRightTextButton("完成",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+        mTopBar.addRightTextButton("完成", R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
@@ -36,16 +36,16 @@ public class MainActivity extends AppCompatActivity {
         mTopBar.setTitle("标题");
 
 
-        CustomTitleBar titleBar2= (CustomTitleBar) findViewById(R.id.titlebar2);
+        CustomTitleBar titleBar2 = (CustomTitleBar) findViewById(R.id.titlebar2);
         titleBar2.setTitle("标题");
-        titleBar2.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary));
-        titleBar2.addLeftTextButton("返回",R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
+        titleBar2.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        titleBar2.addLeftTextButton("返回", R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
-        titleBar2.addRightTextButton("完成",R.id.topbar_right_about_button,ContextCompat.getColorStateList(this,R.color.color_black),16).setOnClickListener(new View.OnClickListener() {
+        titleBar2.addRightTextButton("完成", R.id.topbar_right_about_button, ContextCompat.getColorStateList(this, R.color.color_black), 16).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
@@ -53,23 +53,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        CustomTitleBar titleBar3= (CustomTitleBar) findViewById(R.id.titlebar3);
+        CustomTitleBar titleBar3 = (CustomTitleBar) findViewById(R.id.titlebar3);
         titleBar3.setTitle("标题");
         titleBar3.setSubTitle("副标题");
-        titleBar3.addLeftTextButton("返回",R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
+        titleBar3.addLeftTextButton("返回", R.id.topbar_left_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
-        titleBar3.addRightTextButton("完成",R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
+        titleBar3.addRightTextButton("完成", R.id.topbar_right_about_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "完成", Toast.LENGTH_SHORT).show();
             }
         });
 
-        CustomTitleBar titleBar4= (CustomTitleBar) findViewById(R.id.titlebar4);
+        CustomTitleBar titleBar4 = (CustomTitleBar) findViewById(R.id.titlebar4);
         titleBar4.setTitle("标题");
         titleBar4.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "返回", Toast.LENGTH_SHORT).show();
             }
         });
-        titleBar4.addLeftTextButton("返回",R.id.topbar_left_button);
+        titleBar4.addLeftTextButton("返回", R.id.topbar_left_button);
     }
 }
